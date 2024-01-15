@@ -1,0 +1,15 @@
+name: workflow1
+on: [push]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest    
+    steps:
+    - uses: actions/checkout@v2    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'    
+    - name: installer pandas et numpy
+      run: pip install -r requirements.txt    
+    - name: executer un code python qui qui effectue une tâche et renverra un output de type print
+      run: python script.py
